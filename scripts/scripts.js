@@ -13,7 +13,7 @@ export function explorationActivity(actor, more) {
         "Detect Magic": "@Compendium[pf2e.actionspf2e.Yb0C1uLzeHrVLl7a]{Detect Magic}",
         "Follow the Expert": "@Compendium[pf2e.actionspf2e.tfa4Sh7wcxCEqL29]{Follow the Expert}",
         "Hustle": "@Compendium[pf2e.actionspf2e.JuqmIAnkL9hVGai8]{Hustle}",
-        "Investigate": "@Compendium[pf2e.actionspf2e.EwgTZBWsc8qKaViP]{Investigate}",
+        "Investigate": "@Compendium[pf2e.actionspf2e.EwgTZBWsc8qKaViP]{Investigate}", 
         "Repair": "@Compendium[pf2e.actionspf2e.bT3skovyLUtP22ME]{Repair}",
         "Refocus": "@Compendium[pf2e.actionspf2e.OSefkMgojBLqmRDh]{Refocus}",
         "Repeat a Spell": "@Compendium[pf2e.actionspf2e.OQaFzDtVEOMWizJJ]{Repeat a Spell}",
@@ -42,13 +42,13 @@ export function explorationActivity(actor, more) {
     // TODO: Custom Textbox option
 
     //contentUpdate();
-    content = `<div id="pf2e-explorationActivity-scripts-content"><label for="activity">Choose an activity: </label>
+    content = `<div id="pf2e-explorationActivity-scripts-content"><label for="activity">` + actor.name + `, Please choose an activity.</label>
     <select name="activity" id="activity">`
       for (let i = 0; i < Object.keys(activities).length; i++) {
         content += `<option value="${activities[Object.keys(activities)[i]]}">${Object.keys(activities)[i]}</option>`
       }
     content += `</select></div>`
-
+    
       let d = new Dialog({
         title: "Exploration Activity",
         content,
