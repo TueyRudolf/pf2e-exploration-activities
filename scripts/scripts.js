@@ -6,48 +6,33 @@ export function explorationActivity(actor, tokenID) {
   let content = ''
   let selectedActivity
   let activities = {
-    'Avoid Notice':
-      '@Compendium[pf2e.actionspf2e.IE2nThCmoyhQA0Jn]{Avoid Notice}',
-    'Cover Tracks':
-      '@Compendium[pf2e.actionspf2e.SB7cMECVtE06kByk]{Cover Tracks}',
+    'Avoid Notice': '@Compendium[pf2e.actionspf2e.IE2nThCmoyhQA0Jn]{Avoid Notice}',
+    'Cover Tracks': '@Compendium[pf2e.actionspf2e.SB7cMECVtE06kByk]{Cover Tracks}',
     Defend: '@Compendium[pf2e.actionspf2e.cYtYKa1gDEl7y2N0]{Defend}',
-    'Detect Magic':
-      '@Compendium[pf2e.actionspf2e.Yb0C1uLzeHrVLl7a]{Detect Magic}',
-    'Follow the Expert':
-      '@Compendium[pf2e.actionspf2e.tfa4Sh7wcxCEqL29]{Follow the Expert}',
+    'Detect Magic': '@Compendium[pf2e.actionspf2e.Yb0C1uLzeHrVLl7a]{Detect Magic}',
+    'Follow the Expert': '@Compendium[pf2e.actionspf2e.tfa4Sh7wcxCEqL29]{Follow the Expert}',
     Hustle: '@Compendium[pf2e.actionspf2e.JuqmIAnkL9hVGai8]{Hustle}',
     Investigate: '@Compendium[pf2e.actionspf2e.EwgTZBWsc8qKaViP]{Investigate}',
-    'Repeat a Spell':
-      '@Compendium[pf2e.actionspf2e.OQaFzDtVEOMWizJJ]{Repeat a Spell}',
+    'Repeat a Spell': '@Compendium[pf2e.actionspf2e.OQaFzDtVEOMWizJJ]{Repeat a Spell}',
     Scout: '@Compendium[pf2e.actionspf2e.kV3XM0YJeS2KCSOb]{Scout}',
     Search: '@Compendium[pf2e.actionspf2e.TiNDYUGlMmxzxBYU]{Search}',
     Track: '@Compendium[pf2e.actionspf2e.EA5vuSgJfiHH7plD]{Track}',
   }
 
   let additionalActions = {
-    'Borrow an Arcane Spell':
-      '@Compendium[pf2e.actionspf2e.OizxuPb44g3eHPFh]{Borrow an Arcane Spell}',
+    'Borrow an Arcane Spell': '@Compendium[pf2e.actionspf2e.OizxuPb44g3eHPFh]{Borrow an Arcane Spell}',
     Coerce: '@Compendium[pf2e.actionspf2e.tHCqgwjtQtzNqVvd]{Coerce}',
-    'Cover Tracks':
-      '@Compendium[pf2e.actionspf2e.SB7cMECVtE06kByk]{Cover Tracks}',
-    'Decipher Writing':
-      '@Compendium[pf2e.actionspf2e.d9gbpiQjChYDYA2L]{Decypher Writing}',
-    'Gather Information':
-      '@Compendium[pf2e.actionspf2e.plBGdZhqq5JBl1D8]{Gather Information}',
-    'Identify Alchemy':
-      '@Compendium[pf2e.actionspf2e.Q4kdWVOf2ztIBFg1]{Identify Alchemy}',
-    'Identify Magic':
-      '@Compendium[pf2e.actionspf2e.eReSHVEPCsdkSL4G]{Identify Magic}',
+    'Cover Tracks': '@Compendium[pf2e.actionspf2e.SB7cMECVtE06kByk]{Cover Tracks}',
+    'Decipher Writing': '@Compendium[pf2e.actionspf2e.d9gbpiQjChYDYA2L]{Decypher Writing}',
+    'Gather Information': '@Compendium[pf2e.actionspf2e.plBGdZhqq5JBl1D8]{Gather Information}',
+    'Identify Alchemy': '@Compendium[pf2e.actionspf2e.Q4kdWVOf2ztIBFg1]{Identify Alchemy}',
+    'Identify Magic': '@Compendium[pf2e.actionspf2e.eReSHVEPCsdkSL4G]{Identify Magic}',
     Impersonate: '@Compendium[pf2e.actionspf2e.AJstokjdG6iDjVjE]{Impersonate}',
-    'Learn a Spell':
-      '@Compendium[pf2e.actionspf2e.Q5iIYCFdqJFM31GW]{Learn a Spell}',
-    'Make an Impression':
-      '@Compendium[pf2e.actionspf2e.OX4fy22hQgUHDr0q]{Make an Impression}',
-    'Sense Direction':
-      '@Compendium[pf2e.actionspf2e.fJImDBQfqfjKJOhk]{Sense Direction}',
+    'Learn a Spell': '@Compendium[pf2e.actionspf2e.Q5iIYCFdqJFM31GW]{Learn a Spell}',
+    'Make an Impression': '@Compendium[pf2e.actionspf2e.OX4fy22hQgUHDr0q]{Make an Impression}',
+    'Sense Direction': '@Compendium[pf2e.actionspf2e.fJImDBQfqfjKJOhk]{Sense Direction}',
     Squeeze: '@Compendium[pf2e.actionspf2e.kMcV8e5EZUxa6evt]{Squeeze}',
-    'Treat Wounds':
-      '@Compendium[pf2e.actionspf2e.1kGNdIIhuglAjIp9]{Treat Wounds}',
+    'Treat Wounds': '@Compendium[pf2e.actionspf2e.1kGNdIIhuglAjIp9]{Treat Wounds}',
   }
 
   //contentUpdate();
@@ -62,16 +47,14 @@ export function explorationActivity(actor, tokenID) {
     <select class ="my-class"  name="activity" id="activity">`
   content += `<optgroup label="common">`
   for (let i = 0; i < Object.keys(activities).length; i++) {
-    content += `<option value="${activities[Object.keys(activities)[i]]}">${
-      Object.keys(activities)[i]
-    }</option>`
+    content += `<option value="${activities[Object.keys(activities)[i]]}">${Object.keys(activities)[i]
+      }</option>`
   }
   content += `</optgroup>`
   content += `<optgroup label="additional">`
   for (let i = 0; i < Object.keys(additionalActions).length; i++) {
-    content += `<option value="${
-      additionalActions[Object.keys(additionalActions)[i]]
-    }">${Object.keys(additionalActions)[i]}</option>`
+    content += `<option value="${additionalActions[Object.keys(additionalActions)[i]]
+      }">${Object.keys(additionalActions)[i]}</option>`
   }
   content += `</optgroup>`
   content += `</select></div>`
@@ -121,30 +104,18 @@ export function explorationActivity(actor, tokenID) {
     const re = /\{(.*)\}/i
     let effectName = selectedEffect.match(re)[1]
     const explorationEffects = {
-      'Avoid Notice':
-        'Compendium.pf2e-exploration-effects.exploration-effects.N8vpuGy4TzU10y8E',
-      'Cover Tracks':
-        'Compendium.pf2e-exploration-effects.exploration-effects.F6vJYLZTWDpnrnCZ',
-      Defend:
-        'Compendium.pf2e-exploration-effects.exploration-effects.GYOyFj4ziZX060rZ',
-      'Detect Magic':
-        'Compendium.pf2e-exploration-effects.exploration-effects.OjRHL0B4WAUUQc13',
-      'Follow the Expert':
-        'ompendium.pf2e-exploration-effects.exploration-effects.V347nnVBGDrVWh7k',
-      Hustle:
-        'Compendium.pf2e-exploration-effects.exploration-effects.vNUrKvoOSvEnqzhM',
-      Investigate:
-        'Compendium.pf2e-exploration-effects.exploration-effects.tDsgl8YmhZbx2May',
-      'Repeat a Spell':
-        'Compendium.pf2e-exploration-effects.exploration-effects.kh1QdKkvbNZ0qBsQ',
-      Scout:
-        'Compendium.pf2e-exploration-effects.exploration-effects.mGFBHM1lvHNZ9BsH',
-      Search:
-        'Compendium.pf2e-exploration-effects.exploration-effects.XiVLHjg5lQVMX8Fj',
-      Track:
-        'Compendium.pf2e-exploration-effects.exploration-effects.OcCXjJab7rSR3mDf',
-      Unspecified:
-        'Compendium.pf2e-exploration-effects.exploration-effects.CcyA2CzeaTBWHNHP',
+      'Avoid Notice': 'Compendium.pf2e-exploration-effects.exploration-effects.N8vpuGy4TzU10y8E',
+      'Cover Tracks': 'Compendium.pf2e-exploration-effects.exploration-effects.F6vJYLZTWDpnrnCZ',
+      Defend: 'Compendium.pf2e-exploration-effects.exploration-effects.GYOyFj4ziZX060rZ',
+      'Detect Magic': 'Compendium.pf2e-exploration-effects.exploration-effects.OjRHL0B4WAUUQc13',
+      'Follow the Expert': 'ompendium.pf2e-exploration-effects.exploration-effects.V347nnVBGDrVWh7k',
+      Hustle: 'Compendium.pf2e-exploration-effects.exploration-effects.vNUrKvoOSvEnqzhM',
+      Investigate: 'Compendium.pf2e-exploration-effects.exploration-effects.tDsgl8YmhZbx2May',
+      'Repeat a Spell': 'Compendium.pf2e-exploration-effects.exploration-effects.kh1QdKkvbNZ0qBsQ',
+      Scout: 'Compendium.pf2e-exploration-effects.exploration-effects.mGFBHM1lvHNZ9BsH',
+      Search: 'Compendium.pf2e-exploration-effects.exploration-effects.XiVLHjg5lQVMX8Fj',
+      Track: 'Compendium.pf2e-exploration-effects.exploration-effects.OcCXjJab7rSR3mDf',
+      Unspecified: 'Compendium.pf2e-exploration-effects.exploration-effects.CcyA2CzeaTBWHNHP',
     }
 
     let effect = explorationEffects[effectName]
